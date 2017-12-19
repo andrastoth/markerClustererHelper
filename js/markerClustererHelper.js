@@ -5,7 +5,7 @@
  * email: atandrastoth@gmail.com
  * Licensed under the MIT license
  */
-var c = (function() {
+var MarkerClustererHelper = (function() {
 	'use strict';
 	var helpers = [];
 	var def = {
