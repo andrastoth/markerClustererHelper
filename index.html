@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style type="text/css">
+        #bound-list li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w3-row w3-padding w3-xlarge w3-blue">
+        <div class="w3-half">
+            <div class="w3-bar">
+                <a href="https://atandrastoth.co.uk/main/pages/plugins" class="w3-bar-item w3-button w3-hover-red"><i class="material-icons" style="line-height: 1.6;">arrow_back</i></a>
+                <!--
+                <a href="https://github.com/andrastoth/DecoderPopup" class="w3-bar-item w3-button w3-hover-light-blue">GitHub</a>
+                <a href="https://www.jsclasses.org/package/597-JavaScript-v-1-0-0.html" class="w3-bar-item w3-button w3-hover-light-blue">JS Classes</a>
+                !-->
+            </div>
+        </div>
+
+        <div class="w3-half">
+            <h3 class="w3-right">MarkerClustererHelper</h3>
+        </div>
+    </div>
+    <div class="w3-row w3-margin">
+    	<h1 class="w3-center">MarkerClustererHelper</h1>
+    </div>
+
+    <div class="w3-container w3-margin-top">
+	<div class="w3-container w3-center">
+	  <h3>Simple initialization</h3>
+	  <p>With default values</p>
+	</div>
+        <div class="w3-row w3-row w3-center">
+            <div class="w3-content w3-card" style="max-width:500px">
+                <div id="map" style="height: 480px;width:500px;position: relative;overflow: hidden; max-width: none;"></div>
+            </div>
+        </div>
+	<div class="w3-container w3-center">
+	  <h3>Advanced initialization</h3>
+	  <p>With optional values and functions</p>
+	</div>
+        <div class="w3-row w3-card">
+            <div class="w3-quarter w3-row">
+                <ul id="bound-list" class="w3-ul w3-hoverable" style="height: 480px; overflow-y: scroll;">
+                </ul>
+            </div>
+            <div class="w3-half w3-row">
+                <div id="map1" style="height: 480px;position: relative;overflow: hidden; max-width: none;"></div>
+            </div>
+            <div id="result-content" class="w3-quarter w3-container">
+
+            </div>
+        </div>
+        <div class="w3-card">
+	        <select id="country-select" class="w3-select"></select>
+	    </div>
+    </div>
+    <br>
+    <script type="text/javascript" src="js/markerClustererHelper.js"></script>
+    <script type="text/javascript" src="js/index_html.js"></script>
+    <script type="text/javascript" src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=init"></script>
+</body>
+
+</html>
