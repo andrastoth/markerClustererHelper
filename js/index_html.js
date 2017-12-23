@@ -40,14 +40,14 @@ var options = {
         var locations = helper.getLocations();
         var list = [];
         locations.forEach(function(location) {
-            var item = '<option value="' + location.country + '">' + location.country + '</option>';
-            if (!list.includes(item) && location.country != '-') {
-                list.push(item);
+            if (!list.includes(location.country) && location.country != '-') {
+                list.push(location.country);
+                var opt = document.createElement('option');
+                opt.value = location.country;
+                opt.innerText = location.country;
+                select.appendChild(opt);            
             }
         });
-        list.sort();
-        select.innerHTML = list.join('');
-        select.value = "Hungary";
     }
 };
 
