@@ -31,7 +31,7 @@ var MarkerClustererHelper = (function() {
 		onError: function(e) {
 			console.error(e);
 		},
-		markerCluster() {
+		markerCluster: function() {
 			return {
 				maxZoom: this.maxZoom,
 				gridSize: this.gridSize,
