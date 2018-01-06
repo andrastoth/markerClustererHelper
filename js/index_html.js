@@ -1,16 +1,17 @@
 var select = document.querySelector('#country-select');
 var boundList = document.querySelector('#bound-list');
 select.addEventListener('change', function(event) {
-    if (MarkerClustererHelper) {
-        if (select.value != '-') 
-            MarkerClustererHelper.map('#map1').setCenter(select.value);
-        else 
-            MarkerClustererHelper.map('#map1').setZoom(3);
+    if (typeof MarkerClustererHelper != 'undefined') {
+        if (select.value != '-') MarkerClustererHelper.map('#map1').setCenter(select.value);
+        else MarkerClustererHelper.map('#map1').setZoom(3);
     }
 }, false);
 boundList.addEventListener('click', function(event) {
-    if (MarkerClustererHelper) {
-        MarkerClustererHelper.map('#map1').setCenter(event.target.innerText);
+    if (typeof MarkerClustererHelper != 'undefined') {
+        var location = MarkerClustererHelper.map('#map1').getLocations().find(function(item) {
+            return item.city == event.target.innerText;
+        });
+        MarkerClustererHelper.map('#map1').setCenter(location.country + ' ' + location.city);
     }
 }, false);
 var options = {
