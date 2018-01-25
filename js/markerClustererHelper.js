@@ -298,7 +298,9 @@ var MarkerClustererHelper = (function() {
 			getVisibleLocations: function() {
 				return getLocations(true);
 			},
-			options: opt
+			get options() { 
+				return opt;
+			}
 		}
 	}
 
