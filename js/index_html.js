@@ -8,7 +8,9 @@ select.addEventListener('change', function(event) {
 }, false);
 boundList.addEventListener('click', function(event) {
     if (typeof MarkerClustererHelper != 'undefined') {
-        var location = MarkerClustererHelper.map('#map1').getLocations().find(function(item) {
+        var location = null;
+        MarkerClustererHelper.map('#map1').getLocations().some(function(item) {
+            location = item;
             return item.city == event.target.innerText;
         });
         MarkerClustererHelper.map('#map1').setCenter(location.country + ' ' + location.city);
