@@ -10,11 +10,13 @@ boundList.addEventListener('click', function(event) {
     if (typeof MarkerClustererHelper != 'undefined') {
         var location = null;
         MarkerClustererHelper.map('#map1').getLocations().some(function(item) {
-            location = item;
-            return item.city == event.target.innerText;
+            if(item.city == event.target.innerText){
+                location = item;
+                return true;
+            }
         });
-        MarkerClustererHelper.map('#map1').setCenter(location.country + ' ' + location.city);
-    }
+        if(location != null)
+            MarkerClustererHelper.map('#map1').setCenter(location.country + ' ' + location.city);
 }, false);
 var options = {
     selector: '#map1',
